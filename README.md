@@ -32,13 +32,23 @@ Allowed special chars are: _ - </pre>
 <pre>Mandatory field for installation: Set Access Point(AP) Password. Atleast 8 chars long. 
 Allowed special chars are: @ # $ % ^ & * _ + -</pre>
 
+<strong>--ap-password-encrypt</strong>
+<pre>Optional field for installation. If specified, it will encrypt password in hostapd.conf file for security reason.</pre>
+
 <strong>--ap-country-code</strong>
 <pre>Optional field for installation: Set Access Point(AP) Country Code. Default value is: IN. 
 Make sure that the entered Country Code matches WiFi Country Code if it exists in 
 "/etc/wpa_supplicant/wpa_supplicant.conf" file.
-Allowed Country codes are: AT, AU, BE, BR, CA, CH, CN, CY, CZ, DE, DK, EE, ES, FI, FR, 
-GB, GR, HK, HU, ID, IE, IL, IN, IS, IT, JP, KR, LT, LU, LV, MY, NL, NO, NZ, PH, PL, PT, 
-SE, SG, SI, SK, TH, TW, US, ZA</pre>
+Allowed Country codes are: 
+AD, AE, AF, AG, AI, AL, AM, AO, AQ, AR, AS, AT, AU, AW, AX, AZ, BA, BB, BD, BE, BF, BG, BH, BI, BJ, BL, BM, BN, BO, BQ,
+BR, BS, BT, BV, BW, BY, BZ, CA, CC, CD, CF, CG, CH, CI, CK, CL, CM, CN, CO, CR, CU, CV, CW, CX, CY, CZ, DE, DJ, DK, DM,
+DO, DZ, EC, EE, EG, EH, ER, ES, ET, FI, FJ, FK, FM, FO, FR, GA, GB, GD, GE, GF, GG, GH, GI, GL, GM, GN, GP, GQ, GR, GS,
+GT, GU, GW, GY, HK, HM, HN, HR, HT, HU, ID, IE, IL, IM, IN, IO, IQ, IR, IS, IT, JE, JM, JO, JP, KE, KG, KH, KI, KM, KN,
+KP, KR, KW, KY, KZ, LA, LB, LC, LI, LK, LR, LS, LT, LU, LV, LY, MA, MC, MD, ME, MF, MG, MH, MK, ML, MM, MN, MO, MP, MQ,
+MR, MS, MT, MU, MV, MW, MX, MY, MZ, NA, NC, NE, NF, NG, NI, NL, NO, NP, NR, NU, NZ, OM, PA, PE, PF, PG, PH, PK, PL, PM,
+PN, PR, PS, PT, PW, PY, QA, RE, RO, RS, RU, RW, SA, SB, SC, SD, SE, SG, SH, SI, SJ, SK, SL, SM, SN, SO, SR, SS, ST, SV,
+SX, SY, SZ, TC, TD, TF, TG, TH, TJ, TK, TL, TM, TN, TO, TR, TT, TV, TW, TZ, UA, UG, UM, US, UY, UZ, VA, VC, VE, VG, VI,
+VN, VU, WF, WS, YE, YT, ZA, ZM, ZW</pre>
 
 <strong>--ap-ip-address</strong>
 <pre>Optional field for installation: Set Access Point(AP) IP Address. 
@@ -69,11 +79,11 @@ Example cleanup:
 ----------------------------------------------------------------------------
 Example installation without upgrade: 
 ----------------------------------------------------------------------------
-<pre><code>sudo ./setup-network.sh --install --ap-ssid="abc-1" --ap-password="password@1" 
+<pre><code>sudo ./setup-network.sh --install --ap-ssid="abc-1" --ap-password="password@1" --ap-password-encrypt 
 --ap-country-code="IN" --ap-ip-address="192.168.0.1" --wifi-interface="wlan0"</code></pre>
 
 ----------------------------------------------------------------------------
 Example installation with upgrade: 
 ----------------------------------------------------------------------------
-<pre><code>sudo ./setup-network.sh --install-upgrade --ap-ssid="abc-1" --ap-password="password@1" 
+<pre><code>sudo ./setup-network.sh --install-upgrade --ap-ssid="abc-1" --ap-password="password@1" --ap-password-encrypt 
 --ap-country-code="IN" --ap-ip-address="192.168.0.1" --wifi-interface="wlan0"</code></pre>
